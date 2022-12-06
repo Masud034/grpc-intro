@@ -36,4 +36,5 @@ public class BankService extends BankServiceGrpc.BankServiceImplBase {
         responseObserver.onNext(balance);
         responseObserver.onCompleted();
     }
+    //
 }
