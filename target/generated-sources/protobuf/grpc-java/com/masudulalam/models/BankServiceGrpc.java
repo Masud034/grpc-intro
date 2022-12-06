@@ -46,6 +46,68 @@ public final class BankServiceGrpc {
     return getGetBalanceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.masudulalam.models.DepositRequest,
+      com.masudulalam.models.Balance> getAddBalanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "addBalance",
+      requestType = com.masudulalam.models.DepositRequest.class,
+      responseType = com.masudulalam.models.Balance.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.masudulalam.models.DepositRequest,
+      com.masudulalam.models.Balance> getAddBalanceMethod() {
+    io.grpc.MethodDescriptor<com.masudulalam.models.DepositRequest, com.masudulalam.models.Balance> getAddBalanceMethod;
+    if ((getAddBalanceMethod = BankServiceGrpc.getAddBalanceMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getAddBalanceMethod = BankServiceGrpc.getAddBalanceMethod) == null) {
+          BankServiceGrpc.getAddBalanceMethod = getAddBalanceMethod =
+              io.grpc.MethodDescriptor.<com.masudulalam.models.DepositRequest, com.masudulalam.models.Balance>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "addBalance"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.masudulalam.models.DepositRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.masudulalam.models.Balance.getDefaultInstance()))
+              .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("addBalance"))
+              .build();
+        }
+      }
+    }
+    return getAddBalanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.masudulalam.models.WithdrawRequest,
+      com.masudulalam.models.Balance> getDeductBalanceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "deductBalance",
+      requestType = com.masudulalam.models.WithdrawRequest.class,
+      responseType = com.masudulalam.models.Balance.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.masudulalam.models.WithdrawRequest,
+      com.masudulalam.models.Balance> getDeductBalanceMethod() {
+    io.grpc.MethodDescriptor<com.masudulalam.models.WithdrawRequest, com.masudulalam.models.Balance> getDeductBalanceMethod;
+    if ((getDeductBalanceMethod = BankServiceGrpc.getDeductBalanceMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getDeductBalanceMethod = BankServiceGrpc.getDeductBalanceMethod) == null) {
+          BankServiceGrpc.getDeductBalanceMethod = getDeductBalanceMethod =
+              io.grpc.MethodDescriptor.<com.masudulalam.models.WithdrawRequest, com.masudulalam.models.Balance>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "deductBalance"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.masudulalam.models.WithdrawRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.masudulalam.models.Balance.getDefaultInstance()))
+              .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("deductBalance"))
+              .build();
+        }
+      }
+    }
+    return getDeductBalanceMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -101,6 +163,20 @@ public final class BankServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBalanceMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void addBalance(com.masudulalam.models.DepositRequest request,
+        io.grpc.stub.StreamObserver<com.masudulalam.models.Balance> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddBalanceMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void deductBalance(com.masudulalam.models.WithdrawRequest request,
+        io.grpc.stub.StreamObserver<com.masudulalam.models.Balance> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeductBalanceMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -110,6 +186,20 @@ public final class BankServiceGrpc {
                 com.masudulalam.models.BalanceRequest,
                 com.masudulalam.models.Balance>(
                   this, METHODID_GET_BALANCE)))
+          .addMethod(
+            getAddBalanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.masudulalam.models.DepositRequest,
+                com.masudulalam.models.Balance>(
+                  this, METHODID_ADD_BALANCE)))
+          .addMethod(
+            getDeductBalanceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.masudulalam.models.WithdrawRequest,
+                com.masudulalam.models.Balance>(
+                  this, METHODID_DEDUCT_BALANCE)))
           .build();
     }
   }
@@ -135,6 +225,22 @@ public final class BankServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBalanceMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void addBalance(com.masudulalam.models.DepositRequest request,
+        io.grpc.stub.StreamObserver<com.masudulalam.models.Balance> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddBalanceMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void deductBalance(com.masudulalam.models.WithdrawRequest request,
+        io.grpc.stub.StreamObserver<com.masudulalam.models.Balance> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeductBalanceMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -156,6 +262,20 @@ public final class BankServiceGrpc {
     public com.masudulalam.models.Balance getBalance(com.masudulalam.models.BalanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBalanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.masudulalam.models.Balance addBalance(com.masudulalam.models.DepositRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddBalanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.masudulalam.models.Balance deductBalance(com.masudulalam.models.WithdrawRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeductBalanceMethod(), getCallOptions(), request);
     }
   }
 
@@ -180,9 +300,27 @@ public final class BankServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBalanceMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.masudulalam.models.Balance> addBalance(
+        com.masudulalam.models.DepositRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddBalanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.masudulalam.models.Balance> deductBalance(
+        com.masudulalam.models.WithdrawRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeductBalanceMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_BALANCE = 0;
+  private static final int METHODID_ADD_BALANCE = 1;
+  private static final int METHODID_DEDUCT_BALANCE = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -203,6 +341,14 @@ public final class BankServiceGrpc {
       switch (methodId) {
         case METHODID_GET_BALANCE:
           serviceImpl.getBalance((com.masudulalam.models.BalanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.masudulalam.models.Balance>) responseObserver);
+          break;
+        case METHODID_ADD_BALANCE:
+          serviceImpl.addBalance((com.masudulalam.models.DepositRequest) request,
+              (io.grpc.stub.StreamObserver<com.masudulalam.models.Balance>) responseObserver);
+          break;
+        case METHODID_DEDUCT_BALANCE:
+          serviceImpl.deductBalance((com.masudulalam.models.WithdrawRequest) request,
               (io.grpc.stub.StreamObserver<com.masudulalam.models.Balance>) responseObserver);
           break;
         default:
@@ -267,6 +413,8 @@ public final class BankServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BankServiceFileDescriptorSupplier())
               .addMethod(getGetBalanceMethod())
+              .addMethod(getAddBalanceMethod())
+              .addMethod(getDeductBalanceMethod())
               .build();
         }
       }
