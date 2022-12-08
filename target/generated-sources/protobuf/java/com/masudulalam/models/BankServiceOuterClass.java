@@ -34,6 +34,11 @@ public final class BankServiceOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_WithdrawRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Money_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Money_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48,11 +53,13 @@ public final class BankServiceOuterClass {
       "unt\030\001 \001(\005\"8\n\016DepositRequest\022\026\n\016account_n" +
       "umber\030\001 \001(\005\022\016\n\006amount\030\002 \001(\005\"9\n\017WithdrawR" +
       "equest\022\026\n\016account_number\030\001 \001(\005\022\016\n\006amount" +
-      "\030\002 \001(\0052\214\001\n\013BankService\022\'\n\ngetBalance\022\017.B" +
-      "alanceRequest\032\010.Balance\022\'\n\naddBalance\022\017." +
-      "DepositRequest\032\010.Balance\022+\n\rdeductBalanc" +
-      "e\022\020.WithdrawRequest\032\010.BalanceB\032\n\026com.mas" +
-      "udulalam.modelsP\001b\006proto3"
+      "\030\002 \001(\005\"\026\n\005Money\022\r\n\005value\030\001 \001(\0052\272\001\n\013BankS" +
+      "ervice\022\'\n\ngetBalance\022\017.BalanceRequest\032\010." +
+      "Balance\022\'\n\naddBalance\022\017.DepositRequest\032\010" +
+      ".Balance\022+\n\rdeductBalance\022\020.WithdrawRequ" +
+      "est\032\010.Balance\022,\n\016getMoneyStream\022\020.Withdr" +
+      "awRequest\032\006.Money0\001B\032\n\026com.masudulalam.m" +
+      "odelsP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -82,6 +89,12 @@ public final class BankServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WithdrawRequest_descriptor,
         new java.lang.String[] { "AccountNumber", "Amount", });
+    internal_static_Money_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_Money_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Money_descriptor,
+        new java.lang.String[] { "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -10,7 +10,7 @@ public class AccountDatabase {
             .rangeClosed(1, 10)
             .boxed()
             .collect(Collectors.toMap(
-                    Function.identity(), v -> v * 2)
+                    Function.identity(), v -> v * 10)
             );
     public static int getBalance(int accountId) {
         return map.get(accountId);

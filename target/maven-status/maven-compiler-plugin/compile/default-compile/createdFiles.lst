@@ -5,15 +5,18 @@ com/masudulalam/models/BalanceRequest$Builder.class
 com/masudulalam/models/DepositRequest$Builder.class
 com/masudulalam/models/BankServiceGrpc$3.class
 com/masudulalam/models/Balance.class
+com/masudulalam/models/Money$Builder.class
 com/masudulalam/models/BankServiceGrpc$BankServiceFileDescriptorSupplier.class
 com/masudulalam/models/BankServiceGrpc$BankServiceBlockingStub.class
 com/masudulalam/models/WithdrawRequest.class
 com/masudulalam/models/BankServiceGrpc.class
 com/masudulalam/models/WithdrawRequest$1.class
 com/masudulalam/models/DepositRequestOrBuilder.class
+com/masudulalam/models/MoneyOrBuilder.class
 com/masudulalam/models/Balance$Builder.class
 com/masudulalam/models/BalanceRequest.class
 com/masudulalam/models/BalanceOrBuilder.class
+com/masudulalam/models/Money.class
 com/masudulalam/models/BankServiceOuterClass.class
 com/masudulalam/models/BalanceRequestOrBuilder.class
 org/example/server/BankService.class
@@ -31,3 +34,4 @@ com/masudulalam/models/BankServiceGrpc$BankServiceMethodDescriptorSupplier.class
 com/masudulalam/models/WithdrawRequestOrBuilder.class
 com/masudulalam/models/BankServiceGrpc$BankServiceFutureStub.class
 com/masudulalam/models/Balance$1.class
+com/masudulalam/models/Money$1.class

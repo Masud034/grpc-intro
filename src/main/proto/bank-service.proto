@@ -21,8 +21,17 @@ message WithdrawRequest {
   int32 amount = 2;
 }
 
+//for server side streaming
+message Money {
+  int32 value = 1;
+}
+
 service BankService {
+  //unary
   rpc getBalance(BalanceRequest) returns (Balance);
   rpc addBalance(DepositRequest) returns (Balance);
   rpc deductBalance(WithdrawRequest) returns (Balance);
+
+  //server side streaming
+  rpc getMoneyStream(WithdrawRequest) returns (stream Money);
 }
