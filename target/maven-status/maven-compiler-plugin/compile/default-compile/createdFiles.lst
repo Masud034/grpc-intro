@@ -15,6 +15,7 @@ com/masudulalam/models/DepositRequestOrBuilder.class
 com/masudulalam/models/MoneyOrBuilder.class
 com/masudulalam/models/Balance$Builder.class
 com/masudulalam/models/BalanceRequest.class
+org/example/server/CashStreamingRequest.class
 com/masudulalam/models/BalanceOrBuilder.class
 com/masudulalam/models/Money.class
 com/masudulalam/models/BankServiceOuterClass.class

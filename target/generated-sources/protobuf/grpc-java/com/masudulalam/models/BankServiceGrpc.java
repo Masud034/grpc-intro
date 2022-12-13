@@ -139,6 +139,37 @@ public final class BankServiceGrpc {
     return getGetMoneyStreamMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.masudulalam.models.DepositRequest,
+      com.masudulalam.models.Balance> getAddBalanceStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "addBalanceStream",
+      requestType = com.masudulalam.models.DepositRequest.class,
+      responseType = com.masudulalam.models.Balance.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<com.masudulalam.models.DepositRequest,
+      com.masudulalam.models.Balance> getAddBalanceStreamMethod() {
+    io.grpc.MethodDescriptor<com.masudulalam.models.DepositRequest, com.masudulalam.models.Balance> getAddBalanceStreamMethod;
+    if ((getAddBalanceStreamMethod = BankServiceGrpc.getAddBalanceStreamMethod) == null) {
+      synchronized (BankServiceGrpc.class) {
+        if ((getAddBalanceStreamMethod = BankServiceGrpc.getAddBalanceStreamMethod) == null) {
+          BankServiceGrpc.getAddBalanceStreamMethod = getAddBalanceStreamMethod =
+              io.grpc.MethodDescriptor.<com.masudulalam.models.DepositRequest, com.masudulalam.models.Balance>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "addBalanceStream"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.masudulalam.models.DepositRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.masudulalam.models.Balance.getDefaultInstance()))
+              .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("addBalanceStream"))
+              .build();
+        }
+      }
+    }
+    return getAddBalanceStreamMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -221,6 +252,16 @@ public final class BankServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetMoneyStreamMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     *client side streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.masudulalam.models.DepositRequest> addBalanceStream(
+        io.grpc.stub.StreamObserver<com.masudulalam.models.Balance> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getAddBalanceStreamMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -251,6 +292,13 @@ public final class BankServiceGrpc {
                 com.masudulalam.models.WithdrawRequest,
                 com.masudulalam.models.Money>(
                   this, METHODID_GET_MONEY_STREAM)))
+          .addMethod(
+            getAddBalanceStreamMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+              new MethodHandlers<
+                com.masudulalam.models.DepositRequest,
+                com.masudulalam.models.Balance>(
+                  this, METHODID_ADD_BALANCE_STREAM)))
           .build();
     }
   }
@@ -305,6 +353,17 @@ public final class BankServiceGrpc {
         io.grpc.stub.StreamObserver<com.masudulalam.models.Money> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGetMoneyStreamMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     *client side streaming
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.masudulalam.models.DepositRequest> addBalanceStream(
+        io.grpc.stub.StreamObserver<com.masudulalam.models.Balance> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getAddBalanceStreamMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -404,6 +463,7 @@ public final class BankServiceGrpc {
   private static final int METHODID_ADD_BALANCE = 1;
   private static final int METHODID_DEDUCT_BALANCE = 2;
   private static final int METHODID_GET_MONEY_STREAM = 3;
+  private static final int METHODID_ADD_BALANCE_STREAM = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -448,6 +508,9 @@ public final class BankServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_ADD_BALANCE_STREAM:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.addBalanceStream(
+              (io.grpc.stub.StreamObserver<com.masudulalam.models.Balance>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -503,6 +566,7 @@ public final class BankServiceGrpc {
               .addMethod(getAddBalanceMethod())
               .addMethod(getDeductBalanceMethod())
               .addMethod(getGetMoneyStreamMethod())
+              .addMethod(getAddBalanceStreamMethod())
               .build();
         }
       }

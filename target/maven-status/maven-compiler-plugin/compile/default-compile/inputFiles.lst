@@ -3,6 +3,7 @@
 /Users/newrozios/Downloads/grpc-intro/src/main/java/org/example/server/BankService.java
 /Users/newrozios/Downloads/grpc-intro/target/generated-sources/protobuf/java/com/masudulalam/models/WithdrawRequestOrBuilder.java
 /Users/newrozios/Downloads/grpc-intro/src/main/java/org/example/server/AccountDatabase.java
+/Users/newrozios/Downloads/grpc-intro/src/main/java/org/example/server/CashStreamingRequest.java
 /Users/newrozios/Downloads/grpc-intro/target/generated-sources/protobuf/java/com/masudulalam/models/BalanceOrBuilder.java
 /Users/newrozios/Downloads/grpc-intro/target/generated-sources/protobuf/java/com/masudulalam/models/BalanceRequestOrBuilder.java
 /Users/newrozios/Downloads/grpc-intro/target/generated-sources/protobuf/java/com/masudulalam/models/DepositRequest.java

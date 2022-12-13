@@ -53,13 +53,14 @@ public final class BankServiceOuterClass {
       "unt\030\001 \001(\005\"8\n\016DepositRequest\022\026\n\016account_n" +
       "umber\030\001 \001(\005\022\016\n\006amount\030\002 \001(\005\"9\n\017WithdrawR" +
       "equest\022\026\n\016account_number\030\001 \001(\005\022\016\n\006amount" +
-      "\030\002 \001(\005\"\026\n\005Money\022\r\n\005value\030\001 \001(\0052\272\001\n\013BankS" +
+      "\030\002 \001(\005\"\026\n\005Money\022\r\n\005value\030\001 \001(\0052\353\001\n\013BankS" +
       "ervice\022\'\n\ngetBalance\022\017.BalanceRequest\032\010." +
       "Balance\022\'\n\naddBalance\022\017.DepositRequest\032\010" +
       ".Balance\022+\n\rdeductBalance\022\020.WithdrawRequ" +
       "est\032\010.Balance\022,\n\016getMoneyStream\022\020.Withdr" +
-      "awRequest\032\006.Money0\001B\032\n\026com.masudulalam.m" +
-      "odelsP\001b\006proto3"
+      "awRequest\032\006.Money0\001\022/\n\020addBalanceStream\022" +
+      "\017.DepositRequest\032\010.Balance(\001B\032\n\026com.masu" +
+      "dulalam.modelsP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
